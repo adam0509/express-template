@@ -29,6 +29,7 @@ db.sequelize.sync()
 // 在此引入所有路由
 require("./routes/adminRoutes")(app);
 require("./routes/userRoutes")(app);
+require("./routes/logRoutes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3000;

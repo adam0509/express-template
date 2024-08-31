@@ -36,6 +36,7 @@ db.sequelize = sequelize
 // 在此引入模型
 db.admin = require("../models/adminModel")(sequelize, Sequelize)
 db.user = require("../models/userModel")(sequelize, Sequelize)
+db.log = require("../models/logModel")(sequelize, Sequelize)
 
 // 在此处理模型关系
 
