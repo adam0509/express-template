@@ -1,13 +1,12 @@
 module.exports = app => {
-    const users = require("../controllers/userController");
+    const user = require("../controllers/userController");
     const authenticateToken = require("../middlewares/auth");
-
+  
     var router = require("express").Router();
   
-    router.get("/",  users.findAll);
-    router.post("/",  users.create);
-    router.post("/login", users.login);
-
+    router.get("/", authenticateToken, user.findAll);
+    router.post("/login", user.login);
+  
   
     app.use('/api/users', router);
   };

@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const SECRET_KEY = process.env.JWT_SECRET_KEY; // 这里替换为你实际使用的秘钥
 
+// 前端应发来的头部：bearer <token>
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
